@@ -3,9 +3,7 @@ module AdventOfCode2023.Day1
 open System
 
 let get_digits line = 
-    printfn "%s" line;
     let line = (String.filter (fun c -> Char.IsDigit c) line)
-    printfn "%s" $"{line[0]}{line[line.Length - 1]}";
     int ($"{line[0]}{line[line.Length - 1]}") 
 
 let part_1 file = 
@@ -38,7 +36,6 @@ let from_english (line:string) =
             | 'n'::'i'::'n'::'e':: tl -> aux (acc @ ['9']) tl 
             | hd:: tl -> aux (acc @ [hd]) tl
             | [] -> acc
-    printfn "%s" line;
     aux List.empty (List.ofArray( line.ToCharArray() ))
 
 let part_2 file = 
