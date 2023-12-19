@@ -1,4 +1,5 @@
 (executable
  (public_name advent_of_code)
  (name main)
+ (modules main model)
  (libraries advent_of_code))
